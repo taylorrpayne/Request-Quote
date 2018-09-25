@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">            
+    <title>Email</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,700i" rel="stylesheet">
+    <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+          font-family: 'Noto Sans', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <% @shipping_address = @draft_order.shipping_address %>
+    <div style="max-width: 600px;margin: 0 auto;">
+      <div style="width:clac(100% - 30px);background-color: #fff;padding: 15px;">
+        <div style="display:block;">
+          <p style="font-size: 14px;line-height: 26px;margin-bottom: 15px;">You just received a new quote request from <%= @store_name %>. Click the button below to review the order in Shopify. You can also review the order below.
+          </p>
+        </div>
+        <div style="display:block;margin: 20px 0;text-align: center;">
+          <a href="https://<%= @store_name %>/admin/draft_orders/<%= @draft_order.id %>" target="_blank" style="font-size: 18px;color: #fff;background: #149a90;padding: 12px 25px;border-radius: 3px;text-decoration: none;text-transform: uppercase;letter-spacing: 1px;display: inline-block;">View Quote</a>
+        </div>
+        <div style="display:block;">
+          <h4 style="color: #999;">Order Summary</h4>
+          <% @draft_order.line_items.each do |line_item| %>
+            <div style="display: block;border-bottom: 1px solid #e5e5e5;padding: 20px 0;">
+              <div style="width:calc(70% - 5px);display: inline-block;vertical-align: top;">
+                <div style="display: inline-block;vertical-align: top;padding-top: 10px;">
+                    <p style="font-size: 16px;"><%= line_item.title %></p>
+                    <p style="font-size: 14px;color: #9999;"><%= line_item.variant_title %></p>
+                </div>
+              </div>
+              <div style="width:calc(30% - 5px);display: inline-block;vertical-align: top;text-align: right;">
+                  <p style="font-size: 16px;"><%= "#{@currency_symbol}#{line_item.price}" %></p>
+              </div>
+            </div>
+          <% end %>
+          <div style="display: block;border-bottom: 1px solid #e5e5e5;padding: 20px 0;">
+            <div style="width:calc(70% - 5px);display: inline-block;vertical-align: top;">
+              <p style="color: #999999;font-size: 16px;">Total</p>
+            </div>
+            <div style="width:calc(30% - 5px);display: inline-block;vertical-align: top;text-align: right;">
+              <p style="font-size: 18px;font-weight: 600;"><%= "#{@currency_symbol}#{@draft_order.total_price}" %></p>
+            </div>
+          </div>
+        </div>
+        <div style="display:block;margin: 20px 0;">
+          <h3 style="margin-bottom: 10px;">Customer Information</h3>
+          <div style="display: block;margin-bottom: 20px;">
+            <p style="color: #999;margin-bottom: 5px;font-size: 16px;">Shipping address</p>
+            <p style="margin-bottom: 0;line-height: 26px;font-size: 14px;">
+            <%= @draft_order.customer.first_name %> <%= @draft_order.customer.last_name %> <br />
+            <%= @shipping_address.company %> <br />
+            <%= @shipping_address.address1 %> <br />
+            <%= @shipping_address.city %> <%= @shipping_address.province %>  <%= @shipping_address.zip %> <br />
+            <%= @shipping_address.country %> <br />
+            <%= @shipping_address.phone %> <br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

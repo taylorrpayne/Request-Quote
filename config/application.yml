@@ -1,0 +1,19 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+development:
+  SHOPIFY_APP_API_KEY: 1ebc4f0d2f705e1a5508914c3490cb94
+  SHOPIFY_APP_API_SECREAT: 8b930c93ffd172b24a2aabe3c319db92
+  APP_DOMAIN: https://0f7dbd68.ngrok.io
+production:
+  SHOPIFY_APP_API_KEY: 57b34bd0e18ee94d82ac9b41ad69fbcc
+  SHOPIFY_APP_API_SECREAT: 9b749f688334df7e35009095a47e56bf
