@@ -14,7 +14,11 @@ development:
   SHOPIFY_APP_API_KEY: 1ebc4f0d2f705e1a5508914c3490cb94
   SHOPIFY_APP_API_SECREAT: 8b930c93ffd172b24a2aabe3c319db92
   APP_DOMAIN: 'https://0f7dbd68.ngrok.io'
+
 production:
   SHOPIFY_APP_API_KEY: 8506fff7c33a36602c0ec13377f83125
   SHOPIFY_APP_API_SECREAT: 9405aae847aa4437af17af2b5a04296e
-  APP_DOMAIN: 'http://requestaquoteapp.com'
+  APP_DOMAIN: 'https://requestaquoteapp.com'
+  DB_USER: rails
+  DB_PASSWORD: d0892d14
+

@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: miama-roadster_production
-  username: miama-roadster
-  password: <%= ENV['MIAMA-ROADSTER_DATABASE_PASSWORD'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
