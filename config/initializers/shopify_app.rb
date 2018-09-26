@@ -1,5 +1,5 @@
 ShopifyApp.configure do |config|
-  config.application_name = "My Shopify App"
+  config.application_name = "Request A Quote App"
   config.api_key = ENV['SHOPIFY_APP_API_KEY']
   config.secret = ENV['SHOPIFY_APP_API_SECREAT']
   config.scope = "write_products, write_draft_orders, write_customers"
