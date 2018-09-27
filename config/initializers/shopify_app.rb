@@ -2,7 +2,7 @@ ShopifyApp.configure do |config|
   config.application_name = "Request A Quote App"
   config.api_key = ENV['SHOPIFY_APP_API_KEY']
   config.secret = ENV['SHOPIFY_APP_API_SECREAT']
-  config.scope = "write_products, write_draft_orders, write_customers"
+  config.scope = "write_products, write_draft_orders, write_customers, write_themes"
   config.embedded_app = true
   config.after_authenticate_job = false
   config.session_repository = Shop
