@@ -92,14 +92,28 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   :address => "smtp.gmail.com",
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :user_name => 'john.martine1234@gmail.com',
+  #   :password => 'JOHNMartin1234'
+  # }
+
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.assets.raise_runtime_errors = true
+
   config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :authentication => :plain,
-    :user_name => 'john.martine1234@gmail.com',
-    :password => 'JOHNMartin1234'
+    user_name:            'SMTP_Injection',
+    password:             '6d07b78dfbf47c78541777cc6b567e4cce2672dd',
+    address:              'smtp.sparkpostmail.com',
+    port:                 587,
+    enable_starttls_auto: true,
+    authentication:       'login'
   }
 end
