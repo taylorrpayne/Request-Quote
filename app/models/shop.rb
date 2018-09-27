@@ -412,7 +412,36 @@ class Shop < ActiveRecord::Base
         }
         .action_bottom_submit .action_button:hover,.popup-btn:hover{
           background: #ff8683;
+          color: #fff;
           border: 1px solid #ff8683;
+        }
+        .request-quote-wrapper label{
+          display: block;
+          font-weight: bold;
+          font-size: 13px;
+          text-align: left;
+          margin-bottom: 5px;
+          text-transform: uppercase;
+        }
+        
+        .request-quote-wrapper input[type=\"text\"], .request-quote-wrapper input[type=\"password\"], .request-quote-wrapper input[type=\"email\"]{
+          display: block;
+          width: 100%;
+          height: 44px;
+          min-height: 44px;
+          padding: 0 10px;
+          margin: 0;
+          line-height: 22px;
+          border: 1px solid #c3c3c3;
+          outline: none;
+          background: #fff;
+          color: #5f6a7d;
+          font: 13px \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;
+          margin-bottom: 15px;
+          -webkit-appearance: none;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
       </style>",theme_id: @theme.id)
   end
