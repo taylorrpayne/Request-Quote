@@ -429,19 +429,14 @@ class OrdersController < ApplicationController
 			            data: {cart_json: JSON.stringify(window.hulkapps),store_id: window.hulkapps.store_id,customer_details:customerObj},
 			            crossDomain: true,
 			            success: function(res) {
-			              alert(res);
-			              $(this).html('Submit');
-			          	$('body .request-quote-success-msg').html('<a href=\"javascript:void(0);\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\" title=\"close\">×</a><p>Thanks for submitting your quote! We’ll be in touch within the next 24 hours as we work on finding the best shipping rates to get your products to you. If you need any immediate assistance please contact us.</p>').show('slow');
-			       		 $(this).closest('body').trigger('click');
+			              $('.action_bottom_submit .action_button').html('Submit').prop('disabled', false);
+			          		$('body .request-quote-success-msg').html('<a href=\"javascript:void(0);\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\" title=\"close\">×</a>Thanks for submitting your quote! We’ll be in touch within the next 24 hours as we work on finding the best shipping rates to get your products to you. If you need any immediate assistance please contact us.').show('slow');
+			       		 		$('body').trigger('click');
 			            },
 			            error: function(){
-			       		 $('body .request-quote-success-msg').html('').hide('slow');
+			       		 		$('body .request-quote-success-msg').html('').hide('slow');
 			            }
 			          });
-			          
-			          console.log(customerObj);
-			          console.log(window.hulkapps);
-			          console.log(JSON.stringify(window.hulkapps));
 			        }
 			      });
 			      
@@ -458,7 +453,7 @@ class OrdersController < ApplicationController
 			  {% endfor %}    
 
 			    $('body').on('click','.request-quote-success-msg .close',function(){
-			    	$(this).closest('.request-quote-success-msg').hide();
+			    	$('.request-quote-success-msg').hide();
 			    });
 			  });
 			</script>
@@ -633,6 +628,22 @@ class OrdersController < ApplicationController
 	      	background: #ff8683;
 					border: 1px solid #ff8683;
 	      }
+	      .request-quote-success-msg{
+		  		background-color: #c7f1c7;
+          position: relative;
+          padding: 15px 25px;
+          border-radius: 6px;
+          font-size: 16px;
+          display: none;
+          width: 60%;
+    	  	margin: 0 auto;
+				}  
+        .request-quote-success-msg a{
+          position: absolute;
+          top: 0;
+          font-size: 30px;
+          right: 5px;
+        }
 			</style>",theme_id: @theme.id)
 		render json: @asset and return
 	end
