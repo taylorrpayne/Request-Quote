@@ -93,7 +93,7 @@ class Shop < ActiveRecord::Base
               $('body').trigger('click');
             }); 
 
-            $('#cart_form .popup-btn').on('click',function(e){
+            $('#form .popup-btn').on('click',function(e){
               e.stopPropagation();        
               $('.request-quote-wrapper').addClass('active');
               $('body').addClass('popup-open');
@@ -279,6 +279,7 @@ class Shop < ActiveRecord::Base
         .request-quote-form .action_bottom_submit{
           text-align: center;
           cursor: pointer;
+          clear: both;
         }  
         .request-quote-form  .action_button{
             outline: none;
